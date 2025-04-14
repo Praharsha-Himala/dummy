@@ -148,11 +148,15 @@ def load_checkpoint(checkpoint, architecture):
     return model.eval().to(device)
 
 #--------------------------------------------------------------------------------------------------------------------------
-'''
-input_video = r"E:\Downloads\1Lcrop_1.mp4"
-output_video = r"E:\Downloads\output_with_predictions.avi"
-model = load_checkpoint(r"E:\Downloads\CNN_checkpoint.pth.tar", CNNModel)  
-preds = process_video_with_model(input_video, model, trim_seconds=10)
-plot_predictions_on_full_video(input_video, preds)
-write_predictions_to_csv(preds, input_video)
-'''
+
+
+def rpi():
+    path = r"E:\Downloads\1Lcrop_1.mp4"
+    model_path = r""
+    model = load_checkpoint(model_path, CNNModel) 
+    preds = process_video_with_model(path, model, trim_seconds=10)
+    write_predictions_to_csv(preds, path)
+    
+
+
+
